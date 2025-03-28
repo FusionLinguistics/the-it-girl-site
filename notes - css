@@ -1,0 +1,177 @@
+
+/*body {
+  background-image: url("images/background.jpg");
+}
+Controls how the image fits inside the element.
+background-size: cover;   /* Fills the entire container, crops if needed */
+background-size: contain; /* Fits inside the container, no cropping */
+background-size: 100% 100%; /* Stretch to fit (can distort image) */
+
+Defines if/how the image should repeat.
+background-repeat: no-repeat;
+background-repeat: repeat-x;  /* Only repeat horizontally */
+background-repeat: repeat-y;  /* Only repeat vertically */
+
+Controls where the image sits in the container.
+background-position: center;
+background-position: top left;
+background-position: 50% 50%;
+
+
+background-attachment: scroll;  /* Default */
+background-attachment: fixed;   /* Image stays put as you scroll */ 
+
+background-color: #f0f0f0;
+
+
+Full-Screen Hero Image
+.hero {
+    height: 100vh;
+    background-image: url('images/hero.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+
+  Overlay with Gradient
+  .hero {
+    background-image: 
+      linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+      url('images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  ----------------------------------------------------------------------------------------------
+
+Property	What it Does	Example
+color	Sets text color	color: #333;
+font-family	Sets font type	font-family: Arial, sans-serif;
+font-size	Sets text size	font-size: 18px;
+font-weight	Thickness of text	font-weight: bold; or 400, 700
+font-style	Italic, normal, etc.	font-style: italic;
+text-align	Aligns text (left, right, center, justify)	text-align: center;
+text-decoration	Underline, overline, none	text-decoration: underline;
+text-transform	Uppercase, lowercase, capitalize	text-transform: uppercase;
+line-height	Spacing between lines	line-height: 1.6;
+letter-spacing	Space between letters	letter-spacing: 1px;
+word-spacing	Space between words	word-spacing: 0.5rem;
+
+text-shadow	Adds shadow to text	text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+white-space	Controls how whitespace is handled	white-space: nowrap;
+overflow-wrap	Forces word breaks if needed	overflow-wrap: break-word;
+direction	Text direction (ltr, rtl)	direction: rtl;
+unicode-bidi	Handles mixed direction text	unicode-bidi: bidi-override
+----------------------------------------------------------------------------------------------
+
+The display property determines how an element behaves in the layout — whether it's a block, inline, grid, flex container, etc.
+
+/* ===================================================
+   🧾 CSS Display Property Cheat Sheet
+   ===================================================
+
+   The `display` property controls how an element behaves in the layout.
+   Each element has a default display value, but you can override it.
+
+-----------------------------------------------------
+| Value         | Description                       |
+-----------------------------------------------------
+| block         | Takes up full width, starts on new line
+| inline        | Flows with text, no width/height control
+| inline-block  | Like inline, but allows width/height
+| none          | Hides the element completely (no space taken)
+| flex          | Turns element into a flex container (1D layout)
+| inline-flex   | Flex container but behaves like inline
+| grid          | Turns element into a grid container (2D layout)
+| inline-grid   | Grid container but behaves inline
+| table         | Behaves like a <table> element
+| list-item     | Behaves like a <li> (shows bullets)
+| contents      | Removes element box but keeps children visible
+
+-----------------------------------------------------
+💡 USAGE EXAMPLES
+-----------------------------------------------------
+.container {
+  display: flex;                 /* For flexible row/column layouts */
+  justify-content: space-between;
+}
+
+span {
+  display: inline;              /* Default for <span> */
+}
+
+.btn {
+  display: inline-block;        /* Allows padding/width/height */
+  padding: 10px 20px;
+}
+
+.hidden {
+  display: none;                /* Completely hides the element */
+}
+
+nav ul {
+  display: grid;                /* Advanced grid layouts */
+  grid-template-columns: repeat(3, 1fr);
+}
+
+-----------------------------------------------------
+🧠 TIPS
+-----------------------------------------------------
+- block: Full-width, stacks vertically
+- inline: No line break, flows like text
+- flex: Ideal for aligning items in 1 direction (row or column)
+- grid: Ideal for layout with rows & columns
+- display:
+
+/* ===================================================
+   📦 CSS box-sizing Cheat Sheet
+   ===================================================
+
+   The `box-sizing` property controls how the total width 
+   and height of an element is calculated.
+
+-----------------------------------------------------
+| Value           | Description                     |
+-----------------------------------------------------
+| content-box     | (default) Width/height includes ONLY content.
+|                 | Padding & border are added on top.
+
+| border-box      | Width/height includes content + padding + border.
+|                 | Easier to manage layout. Recommended for modern dev.
+
+-----------------------------------------------------
+💡 EXAMPLES
+-----------------------------------------------------
+/* Default: content-box */
+.box1 {
+  box-sizing: content-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+
+  /* Actual rendered width = 200 + 40 + 10 = 250px */
+}
+
+/* Preferred: border-box */
+.box2 {
+  box-sizing: border-box;
+  width: 200px;
+  padding: 20px;
+  border: 5px solid black;
+
+  /* Actual rendered width = 200px total including padding & border */
+}
+
+-----------------------------------------------------
+🌍 GLOBAL RESET (Best Practice)
+-----------------------------------------------------
+/* Apply border-box to everything */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+  

@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fefcf9;
+  color: #333;
+}
+
+.site-header {
+  background-color: #000;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: #b9a087;
+}
+
+.masterpiece-section {
+  padding: 2rem;
+  transition: background-color 0.6s ease-in-out;
+}
+
+.masterpiece-section h2 {
+  margin-bottom: 1.5rem;
+}
+
+.master-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.goals, .goal-video, .progress {
+  background-color: #ffffffd8;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.goals, .goal-video {
+  flex: 1;
+}
+
+.progress {
+  flex: 2;
+}
+
+.goals ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+input[type="file"] {
+  display: block;
+  margin-top: 1rem;
+}
+
+.upload-btn {
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.upload-btn:hover {
+  background-color: #444;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.video-grid video {
+  width: 100%;
+  max-height: 240px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.delete-btn {
+  margin-top: 0.3rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.dance { background-color: #fff2f2; }
+.violin { background-color: #f2f7ff; }
+.cooking { background-color: #fffbea; }
+.motorcycle { background-color: #f0f8f5; }
+.coding { background-color: #eef7ff; }
+.speaking { background-color: #fdf1ff; }
+
+.upload-btn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: #222;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+.footer {
+  background-color: black;
+  color: #ccc;
+  font-size: 0.9rem;
+  padding: 1.2rem 2rem;
+  text-align: center;
+}

@@ -1,0 +1,212 @@
+/* Basic Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: url('images/background1.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #000;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Fixed Header Navigation Bar */
+.site-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;  /* fixed header height */
+  background: #fff;
+  border-bottom: 1px solid #ccc;  /* subtle separator line */
+  z-index: 1000;   /* ensure header is on top of other content */
+}
+.site-header nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.site-header nav ul {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0;
+  gap: 1.5rem;  /* space between nav items */
+}
+.site-header nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  
+  .logo-image {
+    height: 80px;
+    width: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+    background-color: white;
+    position: fixed;
+    top: -20px;       /* This pushes it outside the top of the body */
+    left: 30px;       /* Adjust horizontal position as needed */
+    z-index: 1001;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .logo-image:hover {
+    transform: scale(1.05);
+  }
+  
+  
+  
+}
+.site-header nav ul li.logo a {
+  font-weight: 700;
+  font-size: 1.1em;
+}
+.site-header nav ul li.logo {
+  /* Push the remaining nav items to the right by taking up all available space */
+  margin-right: auto;
+}
+
+/* Carousel Container */
+.carousel-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 2rem auto;  /* center the carousel on the page with some vertical margin */
+  /* Optionally, set a fixed height to create a consistent carousel area: */
+  height: calc(100vh - 120px); 
+  /* The above uses viewport height minus header & footer (60px + 60px) */
+  overflow: hidden;  /* hide any overflow (for sliding effects, if used) */
+}
+  
+/* Carousel Sections (Slides) */
+.carousel-section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Center content within each slide */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* Initial state for slides (not visible) */
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  /* You can adjust transition-duration (1s) and easing for different smoothness */
+}
+.carousel-section.active {
+  /* Visible and slightly enlarged current slide */
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;  /* ensure active slide is on top of others */
+}
+.carousel-section h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.carousel-section p {
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 1rem 1.5rem;
+}
+.carousel-section img {
+  display: block;
+  max-width: 80%;
+  height: auto;
+  /* Only show the image when its parent section is active (optional extra safety) */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.carousel-section.active img {
+  opacity: 1;
+  /* (The image will fade in quickly when section becomes active) */
+}
+
+/* Fixed Footer */
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  z-index: 1000;
+  /* No fixed height to allow content to wrap if needed, but reserve space via body padding */
+  /* height: 60px;  you could enforce height, but it's flexible in this design */
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  /* make footer content span full width */
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 60px; /* ensure the container is at least 60px high for alignment */
+}
+.footer-container p {
+  color: #000;
+  margin: 0;
+}
+.footer-container p span {
+  opacity: 0.6;  /* lighter text for #itgirljourney */
+}
+.footer-right a {
+  text-decoration: none;
+  color: #000;
+  margin: 0;
+}
+.footer-right a:hover {
+  text-decoration: underline;
+}
+/* Ensure the separator dots and links have some spacing (already provided in inner HTML) */
+.footer-right {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 1rem;
+  }
+
+  .carousel-snap-wrapper {
+    display: flex;
+  }
+
+  .carousel-section {
+    min-width: 85%;
+    scroll-snap-align: center;
+    flex-shrink: 0;
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .carousel-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 1rem;
+  }
+}
+
+
+

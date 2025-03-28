@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Hustle Chapter</title>
+  <link rel="stylesheet" href="hustle.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-storage-compat.js"></script>
+
+  <script src="firebase-init.js" defer></script>
+  <script src="hustle.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <ul>
+        <li class="logo"><a href="index.html">website logo</a></li>
+        <li><a href="index.html">TheITGirl</a></li>
+        <li><a href="master.html">Masterpieces in Motion</a></li>
+        <li><a href="hustle.html">The Hustle Chapter</a></li>
+        <li><a href="#">Luxe & Lift</a></li>
+        <li><a href="#">The Brainery</a></li>
+        <li><a href="mind.html">Mind Musings</a></li>
+        <li><a href="#">Vibe with Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hustle">
+    <div class="top-section">
+      <h2>Welcome to the Hustle</h2>
+      <p>This is where your daily grind turns into visual wins and lasting momentum. Track your goals, visualize your growth, and feel inspired by your own journey.</p>
+    </div>
+  </section>
+
+  <section class="middle-section">
+    <div class="middle_box1">
+      <p contenteditable="true">Goals for this week</p>
+      <div class="bottom-actions">
+        <form action="/submit" method="post">
+          <label for="goal-date">Pick a date:</label>
+          <input type="date" id="goal-date" name="goal-date">
+        </form>
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+
+    <div class="middle_box2">
+      <h2>Progress Video</h2>
+      <div class="video-preview"></div>
+      <input type="file" accept="video/*" />
+      <button class="upload-btn">Upload</button>
+    </div>
+
+    <div class="middle_box1">
+      <p>Goal video reference</p>
+      <video controls></video>
+      <input type="file" accept="video/*">
+      <button>Upload</button>
+    </div>
+  </section>
+
+  <section class="future-you">
+    <h2>Note from Future You</h2>
+    <p contenteditable="true" class="inspo-note">
+      You showed up today, and that’s all that matters. Keep pushing.
+    </p>
+  </section>
+
+  <section class="milestones">
+    <h2>Milestones Unlocked</h2>
+    <div class="badge-grid">
+      <div class="badge unlocked">🔥 3-Day Streak</div>
+      <div class="badge locked">🏅 1-Hour Warrior</div>
+      <div class="badge locked">🌟 Goal Crusher</div>
+    </div>
+  </section>
+
+  <section class="progress-chart">
+    <h2>Weekly Progress</h2>
+    <canvas id="hustleChart" width="400" height="200"></canvas>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 — she’s becoming. <span style="opacity: 0.6;">#itgirljourney</span></p>
+      <div class="footer-right">
+        <a href="#">GitHub</a> ·
+        <a href="#">LinkedIn</a> ·
+        <a href="#">Twitter</a> ·
+        <a href="#">Instagram</a> ·
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const ctx = document.getElementById('hustleChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+        datasets: [{
+          label: 'Minutes Worked Out',
+          data: [30, 45, 20, 60, 40, 50, 70],
+          backgroundColor: '#b9a087'
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
+</body>
+</html>

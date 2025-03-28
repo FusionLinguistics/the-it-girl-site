@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mind Musings - Journal</title>
+  <link rel="stylesheet" href="mind.css" />
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyBEhUQUVQtfMhN0kHKJXmSXhjUiqjxMVOM",
+      authDomain: "mind-musings-journal.firebaseapp.com",
+      projectId: "mind-musings-journal",
+      storageBucket: "mind-musings-journal.appspot.com",
+      messagingSenderId: "1014039755507",
+      appId: "1:1014039755507:web:786e06f449959976dd9586"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav>
+      <ul>
+        <li class="logo"><a href="index.html">website logo</a></li>
+        <li><a href="index.html">TheITGirl</a></li>
+        <li><a href="master.html">Masterpieces in Motion</a></li>
+        <li><a href="#">The Hustle Chapter</a></li>
+        <li><a href="#">Luxe & Lift</a></li>
+        <li><a href="#">The Brainery</a></li>
+        <li><a href="mind.html">Mind Musings</a></li>
+        <li><a href="#">Vibe with Me</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="timeline-container">
+    <section class="create-post">
+      <textarea placeholder="What's on your mind today?"></textarea>
+      <div class="post-options">
+        <input type="file" />
+        <button class="post-btn">Post</button>
+      </div>
+    </section>
+    <!-- Posts will be injected here by JS -->
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <p>&copy; 2025 — she’s becoming. <span style="opacity: 0.6;">#itgirljourney</span></p>
+      <div class="footer-right">
+        <a href="#">GitHub</a> ·
+        <a href="#">LinkedIn</a> ·
+        <a href="#">Twitter</a> ·
+        <a href="#">Instagram</a> ·
+        <a href="#">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="mind.js"></script>
+</body>
+</html>
